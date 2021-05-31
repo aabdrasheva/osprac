@@ -26,7 +26,7 @@ void my_handler(int nsig) {
 
 int main(void) {
   pid_t pid;
-  int i,j;
+  int i, j;
 
   (void) signal(SIGCHLD, my_handler);
 
@@ -35,7 +35,7 @@ int main(void) {
       printf("Can\'t fork child 1\n");
       exit(1);
     } else if (pid == 0) {
-      for (j=1; j < 10000000; j++);
+      for (j = 1; j < 10000000; j++);
       exit(200 + i);
     }
   }
